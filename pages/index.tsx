@@ -1,10 +1,12 @@
+import Topbar from '../components/Topbar'
+
 export default function Home() {
   return (
-    <div>
-      <img src='/taku.svg' width='80' height='40'/>
-      <h1 className='text-3xl font-bold underline'>
-        Hello world!
-      </h1>
+    <div className='absolute flex flex-col h-[100%] w-[100%]'>
+      <Topbar />
+      <div className='rounded-md bg-white mx-2 mb-2 py-5 flex-1'>
+        
+      </div>
     </div>
   )
 }
