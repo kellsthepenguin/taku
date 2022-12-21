@@ -32,7 +32,7 @@ export default function Topbar() {
   }, [isDarkMode])
 
   return (
-    <nav className='mx-2 my-2 rounded-md flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-5 bg-white dark:bg-slate-900 sm:items-baseline dark:text-white font-semibold'>
+    <nav className='mx-2 my-2 rounded-md flex text-center flex-row justify-between py-4 px-5 bg-white dark:bg-slate-900 items-baseline dark:text-white font-semibold'>
       <div className='mb-2 sm:mb-0'>
         <a href='/home' className='text-2xl no-underline'>
           <img src='/taku.svg' width={70} height={35}/>
