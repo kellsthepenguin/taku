@@ -2,6 +2,7 @@ import { sha256 } from 'js-sha256'
 import { nanoid } from 'nanoid'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../utils/prisma'
+import settings from '../../settings.json'
 
 export default function handler(
   req: NextApiRequest,
@@ -41,6 +42,11 @@ async function post(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  if (!settings.canCreateUser) {
+    res.json({ ok: false, reason: 'can\'t create user' })
+    return
+  }
+
   const { name, password, photoURL } = req.body
 
   if (name && photoURL) {
@@ -52,7 +58,7 @@ async function post(
       })
 
       if (existsUser) {
-        res.json({ ok: false, error: 'name exists' })
+        res.json({ ok: false, reason: 'name exists' })
         return
       }
 
