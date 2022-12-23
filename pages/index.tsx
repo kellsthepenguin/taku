@@ -18,7 +18,7 @@ export default function Login() {
             {
               isLoading ? <p>Loading...</p> : error ? <p>Error</p> : data.map((data: any) => <Profile name={data.name} photoURL={data.photoURL} isLocked={data.isLocked} />)
             }
-            <Profile name='Add user' photoURL='/circle-plus-solid.svg' isLocked={false} />
+            <Profile name='Add user' photoURL='/circle-plus-solid.svg' isLocked={false} className='bg-slate-800 dark:bg-slate-300 hover:bg-slate-700 dark:hover:bg-slate-400 text-white dark:text-black' imgClassName='invert' />
           </div>
         </div>
       </div>
