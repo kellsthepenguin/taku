@@ -4,12 +4,12 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import prisma from '../../utils/prisma'
 import settings from '../../settings.json'
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === 'GET') get(req, res)
-  if (req.method === 'POST') post(req, res)
+  if (req.method === 'GET') return await get(req, res)
+  if (req.method === 'POST') return await post(req, res)
 }
 
 async function get(
