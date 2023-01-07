@@ -18,7 +18,7 @@ export default function ProfileSelect() {
             {
               isLoading ? <p>Loading...</p> : error ? <p>Error</p> : data.map((data: any) => <Profile name={data.name} photoURL={data.photoURL} isLocked={data.isLocked} />)
             }
-            <div className='rounded bg-slate-800 dark:bg-slate-300 h-40 w-28 flex flex-col items-center hover:bg-slate-400 dark:hover:bg-slate-400 text-white dark:text-black'>
+            <div className='rounded bg-slate-800 dark:bg-slate-300 h-40 w-28 flex flex-col items-center hover:bg-slate-400 dark:hover:bg-slate-400 text-white dark:text-black' onClick={() => window.location.href = '/create-user'}>
               <FontAwesomeIcon icon={faCirclePlus} className='mt-[11px] rounded dark:text-slate-900 h-[90px] w-[90px]' />
               <p className='mt-4 text-[13pt] font-semibold'>Add user</p>
             </div>
